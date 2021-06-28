@@ -21,36 +21,32 @@
 1. Проверяем, что контейнеры запустились: docker-compose ps
 
 ## Запуск приложения с базой MySql:
-**Запуск приложения с СУБД MySql уже настроен по умолчанию.**
 1. Запускаем приложение и передаем базу MySql:
-   java -Dspring.datasource.url=jdbc:mysql://localhost:3306/app -jar artifacts/aqa-shop.jar
-   при успешном запуске на экране появится сообщение: _Started ShopApplication in 9.766 seconds (JVM running for 11.274)_
+java -Dspring.datasource.url=jdbc:mysql://localhost:3306/app -jar artifacts/aqa-shop.jar
+
+при успешном запуске на экране появится сообщение: _Started ShopApplication in 9.766 seconds (JVM running for 11.274)_
 
 1. Запускаем тесты командой:
-
-gradlew clean test -Durl=jdbc:mysql://localhost:3306/app12   
-
-   gradlew clean test -Durl="jdbc:mysql://localhost:3306/app12" -Duser="user12" -Dpassword="pass12" --info
+gradlew clean test -Durl=jdbc:mysql://localhost:3306/app -Duser=user -Dpassword=pass -Dwebsite=http://localhost:8080
 
 ## Запуск приложения с базой PostgreSQL
-1. 
 1. Запускаем приложение и передаем базу PostgreSQL: 
-   java -Dspring.datasource.url=jdbc:postgresql://localhost:5432/app12 -Dspring.datasource.username=user12 -Dspring.datasource.password=pass12 -jar artifacts/aqa-shop.jar
-1. Запускаем тесты командой:
-   gradlew clean test -Durl=jdbc:postgresql://localhost:5432/app12
+java -Dspring.datasource.url=jdbc:postgresql://localhost:5432/app -jar artifacts/aqa-shop.jar
 
+при успешном запуске на экране появится сообщение: _Started ShopApplication in 9.766 seconds (JVM running for 11.274)
+
+1. Запускаем тесты командой:
+   gradlew clean test -Durl=jdbc:postgresql://localhost:5432/app -Duser=user -Dpassword=pass -Dwebsite=http://localhost:8080
 
 **Ссылки:
-
 
 Перезапуск приложения и тестов
 Если необходимо перезапустить приложение, нужно остановить работу сервисов в терминале, нажав в них Ctrl+С
 
 Формирование отчета AllureReport по результатам тестирования
+При первоначальном формировании отчета необходимо выполнить команду 1 раз - gradlew allureReport (для загрузки AllureReport )
 
-gradlew clean test allureReport
-
-gradlew allureServe
+Отчет формируется командой - gradlew allureServe
 
 Отчет откроется в браузере автоматически. 
 
