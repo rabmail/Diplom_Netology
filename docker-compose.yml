@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  mysql:
+    image: mysql:8.0.18
+    ports:
+      - '3306:3306'
+    security_opt:
+      - seccomp:unconfined
+    volumes:
+      - ./data_sql:/var/lib/sql
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+      - MYSQL_DATABASE=app
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=pass
+
+  postgres:
+    image: postgres:12-alpine
+    ports:
+      - '5432:5432'
+    volumes:
+      - ./data_postgres:/var/lib/postgresql
+    environment:
+      - POSTGRES_DB=app12
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=pass
+
+  node-app:
+    build: ./gate-simulator
+    image: node-app:Dockerfile.0
+    ports:
+      - '9999:9999'
+
+
+
+
+
+
+
