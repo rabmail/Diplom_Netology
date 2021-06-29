@@ -16,6 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class TestBuy {
+
     ServisPage servisPage = new ServisPage();
 
 
@@ -24,6 +25,7 @@ public class TestBuy {
         DBHelper.cleanDB();
         open(System.getProperty("website"));
         servisPage.buy();
+        servisPage.clear();
     }
 
 
@@ -39,7 +41,6 @@ public class TestBuy {
 
     @Test
     void shouldValidByeApproved() {
-        servisPage.clear();
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
@@ -59,7 +60,6 @@ public class TestBuy {
     @Test
         ///должна быть ошибка?
     void shouldValidByeDeclined() {
-        servisPage.clear();
         val cardNumber = DataHelper.getSecondCard();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
@@ -79,7 +79,6 @@ public class TestBuy {
 
     @Test
     void shouldRandomCard() {
-        servisPage.clear();
         val cardNumber = DataHelper.getRandomCard();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
@@ -91,7 +90,6 @@ public class TestBuy {
 
     @Test
     void shouldCardNumberHalfway() {
-        servisPage.clear();
         val cardNumber = DataHelper.getCardNumberHalfway();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
@@ -103,7 +101,6 @@ public class TestBuy {
 
     @Test
     void shouldZeroCardNumber() {
-        servisPage.clear();
         val cardNumber = DataHelper.getZeroCardNumber();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
@@ -115,7 +112,6 @@ public class TestBuy {
 
     @Test
     void shouldCardNumberEmpty() {
-        servisPage.clear();
         val cardNumber = DataHelper.getCardNumberEmpty();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
@@ -128,7 +124,6 @@ public class TestBuy {
     @Test
         //проходит операция с 00 месяцем
     void shouldZeroMonth() {
-        servisPage.clear();
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getZeroMonth();
         val year = DataHelper.getValidYear();
@@ -140,7 +135,6 @@ public class TestBuy {
 
     @Test
     void shouldInvalidMonth() {
-        servisPage.clear();
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getInvalidMonth();
         val year = DataHelper.getValidYear();
@@ -152,7 +146,6 @@ public class TestBuy {
 
     @Test
     void shouldEmptyMonth() {
-        servisPage.clear();
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getEmptyMonth();
         val year = DataHelper.getValidYear();
@@ -164,7 +157,6 @@ public class TestBuy {
 
     @Test
     void shouldInvalidYear() {
-        servisPage.clear();
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getInvalidYear();
@@ -176,7 +168,6 @@ public class TestBuy {
 
     @Test
     void shouldEmptyYear() {
-        servisPage.clear();
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getEmptyYear();
@@ -189,7 +180,6 @@ public class TestBuy {
     @Test
         /// допускает русские буквы
     void shouldInvalidOwnerCard() {
-        servisPage.clear();
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
@@ -201,7 +191,6 @@ public class TestBuy {
 
     @Test
     void shouldEmptyOwnerCard() {
-        servisPage.clear();
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
@@ -214,7 +203,6 @@ public class TestBuy {
     @Test
         // в поле владелец допускает цифры
     void shouldInvalidOwnerCardNumbers() {
-        servisPage.clear();
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
@@ -227,7 +215,6 @@ public class TestBuy {
     @Test
         // в поле владелец допускает символы
     void shoudlInvalidOwnerCardSymbols() {
-        servisPage.clear();
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
@@ -240,7 +227,6 @@ public class TestBuy {
     @Test
         // в поле владелец допускаются прописные символы
     void shoudlInvalidOwnerCardUppercaseLetters() {
-        servisPage.clear();
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
@@ -253,7 +239,6 @@ public class TestBuy {
 
     @Test
     void shoulInvalidCvs() {
-        servisPage.clear();
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
@@ -265,7 +250,6 @@ public class TestBuy {
 
     @Test
     void shoulEmptyCvs() {
-        servisPage.clear();
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
@@ -278,7 +262,6 @@ public class TestBuy {
     @Test
         //проходит CVS 000 ошибка или нет?
     void shoulZeroCvs() {
-        servisPage.clear();
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
@@ -291,7 +274,6 @@ public class TestBuy {
     @Test
         // в поле владелец 1 символ
     void shoudlInvalidOwnerCardMinSymbols() {
-        servisPage.clear();
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
@@ -304,7 +286,6 @@ public class TestBuy {
     @Test
         // в поле владелец 100 символов
     void shoudlInvalidOwnerCardMaxSymbols() {
-        servisPage.clear();
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
