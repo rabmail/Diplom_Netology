@@ -21,9 +21,6 @@ public class DBHelper {
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }
-        System.out.println(url);
-        System.out.println(user);
-        System.out.println(password);
         return connection;
     }
 

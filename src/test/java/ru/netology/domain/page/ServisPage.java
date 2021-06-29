@@ -5,16 +5,18 @@ import org.openqa.selenium.Keys;
 
 import java.time.Duration;
 
+import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.withText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.Selenide.*;
 
 public class ServisPage {
 
     private SelenideElement buttonBuy = $("button:nth-child(3)");
     private SelenideElement buttonBuyCredit = $$("[class='button button_view_extra button_size_m button_theme_alfa-on-white']").get(0);
-    private SelenideElement buttonResume = $$("[class='button button_view_extra button_size_m button_theme_alfa-on-white']").get(1);
+
+    private SelenideElement buttonResume = $$("button").find(exactText("Продолжить"));
+ //   private SelenideElement buttonResume = $$("[class='button button_view_extra button_size_m button_theme_alfa-on-white']").get(1);
 
     private SelenideElement fieldCardNumber = $("[placeholder='0000 0000 0000 0000']");
     private SelenideElement fieldMonth = $("[placeholder='08']");
@@ -30,6 +32,19 @@ public class ServisPage {
     private SelenideElement errorCardExpired = $(withText("Истёк срок действия карты"));
     private SelenideElement errorOwner = $(withText("Неверно указан владелец карты"));
 
+    private static String correctNameTitle = "AQA: Путешествие дня";
+    private SelenideElement  errorNameSity = $("#root > div > div > div > div:nth-child(2) > h3");
+    private static String correctNameSity = "Марракеш";
+
+    public  String getСorrectNameTitle() {
+        return correctNameTitle;
+    }
+
+    public  String getСorrectNameCity() {
+        return correctNameSity;
+    }
+
+    public  String getErrorNameSity() { return errorNameSity.getText(); }
 
     public ServisPage buy() {
         buttonBuy.click();

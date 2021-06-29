@@ -30,7 +30,7 @@ _при успешном запуске на экране появится со�
 
 1. Запускаем тесты командой:
 
-gradlew clean test -Durl=jdbc:mysql://localhost:3306/app -Duser=user -Dpassword=pass -Dwebsite=http://localhost:8080
+gradlew clean test -Durl=jdbc:mysql://localhost:3306/app -Duser=user -Dpassword=pass 
 
 ## Запуск приложения с базой PostgreSQL
 1. Запускаем приложение и передаем базу PostgreSQL: 
@@ -39,7 +39,7 @@ java -Dspring.datasource.url=jdbc:postgresql://localhost:5432/app -jar artifacts
 при успешном запуске на экране появится сообщение: _Started ShopApplication in 9.766 seconds (JVM running for 11.274)
 
 2. Запускаем тесты командой:
-   gradlew clean test -Durl=jdbc:postgresql://localhost:5432/app -Duser=user -Dpassword=pass -Dwebsite=http://localhost:8080
+   gradlew clean test -Durl=jdbc:postgresql://localhost:5432/app -Duser=user -Dpassword=pass 
 
 
 ##Формирование отчета AllureReport по результатам тестирования

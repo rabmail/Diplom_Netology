@@ -3,32 +3,34 @@ package ru.netology.domain.test;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import lombok.val;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import ru.netology.domain.data.DBHelper;
 import ru.netology.domain.data.DataHelper;
 import ru.netology.domain.page.ServisPage;
 
+import static com.codeborne.selenide.Configuration.startMaximized;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestBuyCredit {
-    ServisPage servisPage = new ServisPage();
 
+   ServisPage servisPage = new ServisPage();
 
     @BeforeEach
     void shouldCleanDataBaseAndOpenWeb() {
-        DBHelper.cleanDB();
-        open("http://localhost:8080");
+        startMaximized = true;
+        open(System.getProperty("website"));
         servisPage.buyCredit();
         servisPage.clear();
+    }
+    @AfterEach
+    void cleanDataBases() {
+        DBHelper.cleanDB();
     }
 
     @BeforeAll
     static void setUpAll() {
-        SelenideLogger.addListener("allure", new AllureSelenide());
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
     @AfterAll
