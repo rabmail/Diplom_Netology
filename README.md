@@ -17,11 +17,16 @@ _Приложение должно в собственной СУБД сохра
 
 ## Процедура запуска тестов:
 
-## Запуск сервиса "Путешествие дня"
+### Для запуска тестов на вашем ПК должно быть установленно следующее ПО:
+1. IntelliJ IDEA 
+2. Node.js
+3. Docker Desktop
+
+### Запуск сервиса "Путешествие дня"
 1. Запускаем контейнеры MySql, PostgreSQL и Node:  docker-compose up -d --force-recreate
 1. Проверяем, что контейнеры запустились: docker-compose ps
 
-## Запуск приложения с базой MySql:
+### Запуск приложения с базой MySql:
 1. Запускаем приложение и передаем базу MySql:
 
 java -Dspring.datasource.url=jdbc:mysql://localhost:3306/app -jar artifacts/aqa-shop.jar
