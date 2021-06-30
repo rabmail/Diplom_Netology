@@ -39,15 +39,17 @@ gradlew clean test -Durl=jdbc:mysql://localhost:3306/app -Duser=user -Dpassword=
 
 ## Запуск приложения с базой PostgreSQL
 1. Запускаем приложение и передаем базу PostgreSQL: 
+
 java -Dspring.datasource.url=jdbc:postgresql://localhost:5432/app -jar artifacts/aqa-shop.jar
 
-при успешном запуске на экране появится сообщение: _Started ShopApplication in 9.766 seconds (JVM running for 11.274)
+при успешном запуске на экране появится сообщение: _Started ShopApplication in 9.766 seconds (JVM running for 11.274)_
 
 2. Запускаем тесты командой:
-   gradlew clean test -Durl=jdbc:postgresql://localhost:5432/app -Duser=user -Dpassword=pass 
+
+gradlew clean test -Durl=jdbc:postgresql://localhost:5432/app -Duser=user -Dpassword=pass 
 
 
-##Формирование отчета AllureReport по результатам тестирования
+## Формирование отчета AllureReport по результатам тестирования
 _При первоначальном формировании отчета необходимо выполнить команду 1 раз:_
 
 gradlew allureReport (для загрузки AllureReport )
@@ -58,14 +60,18 @@ gradlew allureServe
 
 Отчет откроется в браузере автоматически.
 
-##Перезапуск приложения и тестов
+## Перезапуск приложения и тестов
 
 Если необходимо перезапустить приложение, нужно остановить работу сервисов в терминале, нажав в них Ctrl+С
 
 
 
-**Ссылки: 
+## Документация: 
+
+Комплексный отчёт о проведённой автоматизации тестирования
 
 **[План тестирования](https://github.com/rabmail/Portfolio/blob/850c090453cb6c0ef8b7459c6cdbbe4f62e878bc/Report/Plan.md "План тестирования")**
 
 **[Отчет о тестировании](https://github.com/rabmail/Portfolio/blob/b7187f6e455a59a1c86ce2b035e251c647cec4a4/Report/Report.md "Отчет о тестировании")**
+
+**[Итоговый отчёт о проведённой автоматизации тестирования] **
