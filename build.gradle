@@ -46,12 +46,7 @@ test {
 
 
     systemProperty "website", System.getProperty("website", "http://localhost:8080")
-    //автоматический запуск тестов из командной строки Gradle
-    // systemProperty "url", System.getProperty("url")
-
-    // ручной запуск тестов с сервером MySQL
-    systemProperty "url", System.getProperty("url", "jdbc:mysql://localhost:3306/app")
-
+    systemProperty "url", System.getProperty("url")
     systemProperty "user", System.getProperty("user", "user")
     systemProperty "password", System.getProperty("password", "pass")
 
