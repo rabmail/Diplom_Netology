@@ -70,7 +70,7 @@ gradlew allureServe
 
 Комплексный отчёт о проведённой автоматизации тестирования
 
-**[План тестирования](https://github.com/rabmail/Portfolio/blob/850c090453cb6c0ef8b7459c6cdbbe4f62e878bc/Report/Plan.md "План тестирования")**
+**[План тестирования](https://github.com/rabmail/Diplom_Netology/blob/fcaea2c26b6be865a70da1833ff4acea3d121d4c/report/Plan.md "План тестирования")**
 
 **[Отчет о тестировании](https://github.com/rabmail/Portfolio/blob/b7187f6e455a59a1c86ce2b035e251c647cec4a4/Report/Report.md "Отчет о тестировании")**
 
