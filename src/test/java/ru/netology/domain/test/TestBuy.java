@@ -60,7 +60,6 @@ public class TestBuy {
     }
 
     @Test
-        ///должна быть ошибка?
     void shouldValidByeDeclined() {
         val cardNumber = DataHelper.getSecondCard();
         val month = DataHelper.getValidMonth();
@@ -215,7 +214,6 @@ public class TestBuy {
     }
 
     @Test
-        // в поле владелец допускает символы
     void shoudlInvalidOwnerCardSymbols() {
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
@@ -227,7 +225,6 @@ public class TestBuy {
     }
 
     @Test
-        // в поле владелец допускаются прописные символы
     void shoudlInvalidOwnerCardUppercaseLetters() {
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
@@ -262,7 +259,6 @@ public class TestBuy {
     }
 
     @Test
-        //проходит CVS 000 ошибка или нет?
     void shoulZeroCvs() {
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
@@ -274,7 +270,6 @@ public class TestBuy {
     }
 
     @Test
-        // в поле владелец 1 символ
     void shoudlInvalidOwnerCardMinSymbols() {
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
@@ -286,7 +281,6 @@ public class TestBuy {
     }
 
     @Test
-        // в поле владелец 100 символов
     void shoudlInvalidOwnerCardMaxSymbols() {
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();

@@ -7,14 +7,13 @@ import org.junit.jupiter.api.*;
 import ru.netology.domain.data.DBHelper;
 import ru.netology.domain.data.DataHelper;
 import ru.netology.domain.page.ServisPage;
-
 import static com.codeborne.selenide.Configuration.startMaximized;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestBuyCredit {
 
-   ServisPage servisPage = new ServisPage();
+    ServisPage servisPage = new ServisPage();
 
     @BeforeEach
     void shouldCleanDataBaseAndOpenWeb() {
@@ -23,6 +22,7 @@ public class TestBuyCredit {
         servisPage.buyCredit();
         servisPage.clear();
     }
+
     @AfterEach
     void cleanDataBases() {
         DBHelper.cleanDB();
@@ -57,7 +57,6 @@ public class TestBuyCredit {
     }
 
     @Test
-        ///должна быть ошибка?
     void shouldValidByeDeclined() {
         val cardNumber = DataHelper.getSecondCard();
         val month = DataHelper.getValidMonth();
@@ -121,7 +120,6 @@ public class TestBuyCredit {
     }
 
     @Test
-        //проходит операция с 00 месяцом
     void shoulZeroMonth() {
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getZeroMonth();
@@ -177,7 +175,6 @@ public class TestBuyCredit {
     }
 
     @Test
-        /// допускает русские буквы
     void shoulInvalidOwnerCard() {
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
@@ -200,7 +197,6 @@ public class TestBuyCredit {
     }
 
     @Test
-        // в поле владелец допускает цифры
     void shoulInvalidOwnerCardNumbers() {
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
@@ -212,7 +208,6 @@ public class TestBuyCredit {
     }
 
     @Test
-        // в поле владелец допускает символы
     void shoulInvalidOwnerCardSymbols() {
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
@@ -224,7 +219,6 @@ public class TestBuyCredit {
     }
 
     @Test
-        // в поле владелец допускаются прописные символы
     void shoulInvalidOwnerCardUppercaseLetters() {
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
@@ -258,7 +252,6 @@ public class TestBuyCredit {
     }
 
     @Test
-        //проходит CVS 000 ошибка или нет?
     void shoulZeroCvs() {
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
@@ -270,7 +263,6 @@ public class TestBuyCredit {
     }
 
     @Test
-        // в поле владелец 1 символ
     void shoudlInvalidOwnerCardMinSymbols() {
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
@@ -282,7 +274,6 @@ public class TestBuyCredit {
     }
 
     @Test
-        // в поле владелец 100 симвалов
     void shoudlInvalidOwnerCardMaxSymbols() {
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
