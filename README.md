@@ -74,4 +74,4 @@ gradlew allureServe
 
 **[Отчет о тестировании](https://github.com/rabmail/Portfolio/blob/b7187f6e455a59a1c86ce2b035e251c647cec4a4/Report/Report.md "Отчет о тестировании")**
 
-**[Итоговый отчёт о проведённой автоматизации тестирования] **
+**[Итоговый отчёт о проведённой автоматизации](https://github.com/rabmail/Diplom_Netology/blob/54d28798fad4f1b186e72822dbe2d614d5e6c761/report/Summary.md "Итоговый отчёт о проведённой автоматизации")**
