@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class TestWebsite extends WebDriveHelper {
+public class TestWebsite {
 
     ServisPage servisPage = new ServisPage();
 
