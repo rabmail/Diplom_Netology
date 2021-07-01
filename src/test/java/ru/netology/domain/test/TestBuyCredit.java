@@ -6,21 +6,21 @@ import lombok.val;
 import org.junit.jupiter.api.*;
 import ru.netology.domain.data.DBHelper;
 import ru.netology.domain.data.DataHelper;
-import ru.netology.domain.page.ServisPage;
+import ru.netology.domain.page.ServicePage;
 import static com.codeborne.selenide.Configuration.startMaximized;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestBuyCredit {
 
-    ServisPage servisPage = new ServisPage();
+    ServicePage servicePage = new ServicePage();
 
     @BeforeEach
     void shouldCleanDataBaseAndOpenWeb() {
         startMaximized = true;
         open(System.getProperty("website"));
-        servisPage.buyCredit();
-        servisPage.clear();
+        servicePage.buyCredit();
+        servicePage.clear();
     }
 
     @AfterEach
@@ -45,11 +45,11 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getValidOwnerCard();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.expectApprovadBank();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.expectApprovadBank();
         val expected = DataHelper.getFirstCardStatus();
         if (expected == DataHelper.getSecondCardStatus()) {
-            servisPage.errorBankRefusal();
+            servicePage.errorBankRefusal();
         } else {
             val actual = DBHelper.getStatusPaymentByeCredit();
             assertEquals(expected, actual);
@@ -63,11 +63,11 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getValidOwnerCard();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.expectApprovadBank();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.expectApprovadBank();
         val expected = DataHelper.getSecondCardStatus();
         if (expected == DataHelper.getSecondCardStatus()) {
-            servisPage.errorBankRefusal();
+            servicePage.errorBankRefusal();
         } else {
             val actual = DBHelper.getStatusPaymentByeCredit();
             assertEquals(expected, actual);
@@ -82,8 +82,8 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getValidOwnerCard();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorBankRefusal();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorBankRefusal();
     }
 
     @Test
@@ -93,8 +93,8 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getValidOwnerCard();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorInvalidFormat();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorInvalidFormat();
     }
 
     @Test
@@ -104,8 +104,8 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getValidOwnerCard();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorBankRefusal();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorBankRefusal();
     }
 
     @Test
@@ -115,8 +115,8 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getValidOwnerCard();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorInvalidFormat();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorInvalidFormat();
     }
 
     @Test
@@ -126,8 +126,8 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getValidOwnerCard();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorInvalidFormat();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorInvalidFormat();
     }
 
     @Test
@@ -137,8 +137,8 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getValidOwnerCard();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorInvalidDurationCard();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorInvalidDurationCard();
     }
 
     @Test
@@ -148,8 +148,8 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getValidOwnerCard();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorInvalidFormat();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorInvalidFormat();
     }
 
     @Test
@@ -159,8 +159,8 @@ public class TestBuyCredit {
         val year = DataHelper.getInvalidYear();
         val owner = DataHelper.getValidOwnerCard();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorCardExpired();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorCardExpired();
     }
 
     @Test
@@ -170,8 +170,8 @@ public class TestBuyCredit {
         val year = DataHelper.getEmptyYear();
         val owner = DataHelper.getValidOwnerCard();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorInvalidFormat();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorInvalidFormat();
     }
 
     @Test
@@ -181,8 +181,8 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getInvalidOwnerCard();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorInvalidFormat();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorInvalidFormat();
     }
 
     @Test
@@ -192,8 +192,8 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getEmptyOwnerCard();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorFieldMandatory();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorFieldMandatory();
     }
 
     @Test
@@ -203,8 +203,8 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getInvalidOwnerCardNumbers();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorInvalidFormat();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorInvalidFormat();
     }
 
     @Test
@@ -214,8 +214,8 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getInvalidOwnerCardSymbols();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorInvalidFormat();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorInvalidFormat();
     }
 
     @Test
@@ -225,8 +225,8 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getInvalidOwnerCardUppercaseLetters();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorInvalidFormat();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorInvalidFormat();
     }
 
     @Test
@@ -236,8 +236,8 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getValidOwnerCard();
         val cvs = DataHelper.getInvalidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorInvalidFormat();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorInvalidFormat();
     }
 
     @Test
@@ -247,8 +247,8 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getValidOwnerCard();
         val cvs = DataHelper.getEmptyCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorInvalidFormat();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorInvalidFormat();
     }
 
     @Test
@@ -258,8 +258,8 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getValidOwnerCard();
         val cvs = DataHelper.getZeroCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorInvalidFormat();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorInvalidFormat();
     }
 
     @Test
@@ -269,8 +269,8 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getEmptyOwnerMinSymbols();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorOwner();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorOwner();
     }
 
     @Test
@@ -280,7 +280,7 @@ public class TestBuyCredit {
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getEmptyOwnerCardMaxSumbols();
         val cvs = DataHelper.getValidCvs();
-        servisPage.fillFields(cardNumber, month, year, owner, cvs);
-        servisPage.errorOwner();
+        servicePage.fillFields(cardNumber, month, year, owner, cvs);
+        servicePage.errorOwner();
     }
 }

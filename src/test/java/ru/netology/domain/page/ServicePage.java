@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class ServisPage {
+public class ServicePage {
 
     private SelenideElement buttonBuy = $("button:nth-child(3)");
     private SelenideElement buttonBuyCredit = $$("[class='button button_view_extra button_size_m button_theme_alfa-on-white']").get(0);
@@ -46,19 +46,19 @@ public class ServisPage {
 
     public  String getErrorNameSity() { return errorNameSity.getText(); }
 
-    public ServisPage buy() {
+    public ServicePage buy() {
         buttonBuy.click();
-        return new ServisPage();
+        return new ServicePage();
     }
 
-    public ServisPage buyCredit() {
+    public ServicePage buyCredit() {
         buttonBuyCredit.click();
-        return new ServisPage();
+        return new ServicePage();
     }
 
-    public ServisPage clear() {
+    public ServicePage clear() {
         clearField();
-        return new ServisPage();
+        return new ServicePage();
     }
 
 

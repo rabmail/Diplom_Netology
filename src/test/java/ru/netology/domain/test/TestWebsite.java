@@ -3,7 +3,7 @@ package ru.netology.domain.test;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
-import ru.netology.domain.page.ServisPage;
+import ru.netology.domain.page.ServicePage;
 
 import static com.codeborne.selenide.Configuration.startMaximized;
 import static com.codeborne.selenide.Selenide.open;
@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestWebsite {
 
-    ServisPage servisPage = new ServisPage();
+    ServicePage servicePage = new ServicePage();
 
     @BeforeEach
     void shouldCleanDataBaseAndOpenWeb() {
@@ -33,13 +33,13 @@ public class TestWebsite {
     @Test
     void shouldValidPageName() {
         String nameTitle = getWebDriver().getTitle();
-        assertEquals(servisPage.getСorrectNameTitle(), nameTitle);
+        assertEquals(servicePage.getСorrectNameTitle(), nameTitle);
 
     }
 
     @Test
     void shouldValidNameCity() {
-        assertEquals(servisPage.getСorrectNameCity(), servisPage.getErrorNameSity());
+        assertEquals(servicePage.getСorrectNameCity(), servicePage.getErrorNameSity());
     }
 
 }
