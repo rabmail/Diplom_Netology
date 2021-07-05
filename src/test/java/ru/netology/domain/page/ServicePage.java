@@ -11,19 +11,14 @@ import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class ServicePage {
-
     private SelenideElement buttonBuy = $("button:nth-child(3)");
     private SelenideElement buttonBuyCredit = $$("[class='button button_view_extra button_size_m button_theme_alfa-on-white']").get(0);
-
     private SelenideElement buttonResume = $$("button").find(exactText("Продолжить"));
- //   private SelenideElement buttonResume = $$("[class='button button_view_extra button_size_m button_theme_alfa-on-white']").get(1);
-
     private SelenideElement fieldCardNumber = $("[placeholder='0000 0000 0000 0000']");
     private SelenideElement fieldMonth = $("[placeholder='08']");
     private SelenideElement fieldYear = $("[placeholder='22']");
     private SelenideElement fieldOwner = $$("[class='input__control']").get(3);
     private SelenideElement fieldCvc = $("[placeholder='999']");
-
     private SelenideElement errorInvalidFormat = $(withText("Неверный формат"));
     private SelenideElement errorFieldMandatory = $(withText("Поле обязательно для заполнения"));
     private SelenideElement approvedBank = $(withText("Операция одобрена Банком."));
@@ -31,20 +26,21 @@ public class ServicePage {
     private SelenideElement errorInvalidDurationCard = $(withText("Неверно указан срок действия карты"));
     private SelenideElement errorCardExpired = $(withText("Истёк срок действия карты"));
     private SelenideElement errorOwner = $(withText("Неверно указан владелец карты"));
-
     private static String correctNameTitle = "AQA: Путешествие дня";
-    private SelenideElement  errorNameSity = $("#root > div > div > div > div:nth-child(2) > h3");
+    private SelenideElement errorNameSity = $("#root > div > div > div > div:nth-child(2) > h3");
     private static String correctNameSity = "Марракеш";
 
-    public  String getСorrectNameTitle() {
+    public String getСorrectNameTitle() {
         return correctNameTitle;
     }
 
-    public  String getСorrectNameCity() {
+    public String getСorrectNameCity() {
         return correctNameSity;
     }
 
-    public  String getErrorNameSity() { return errorNameSity.getText(); }
+    public String getErrorNameSity() {
+        return errorNameSity.getText();
+    }
 
     public ServicePage buy() {
         buttonBuy.click();
@@ -60,7 +56,6 @@ public class ServicePage {
         clearField();
         return new ServicePage();
     }
-
 
     public void clearField() {
         fieldCardNumber.sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);

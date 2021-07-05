@@ -40,7 +40,6 @@ public class DataHelper {
         return "";
     }
 
-
     public static String getZeroMonth() {
         return "00";
     }
@@ -80,6 +79,7 @@ public class DataHelper {
     public static String getInvalidOwnerCardNumbers() {
         return "123";
     }
+
     public static String getInvalidOwnerCardUppercaseLetters() {
         return "ivan pupkin";
     }
@@ -115,6 +115,5 @@ public class DataHelper {
     public static String getZeroCvs() {
         return "000";
     }
-
 
 }

@@ -14,7 +14,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class TestBuy {
-
     ServicePage servicePage = new ServicePage();
 
     @BeforeEach
@@ -39,7 +38,6 @@ public class TestBuy {
     static void tearDownAll() {
         SelenideLogger.removeListener("allure");
     }
-
 
     @Test
     void shouldValidByeApproved() {
@@ -75,7 +73,6 @@ public class TestBuy {
             val actual = DBHelper.getStatusPaymentBye();
             assertEquals(expected, actual);
         }
-
     }
 
     @Test
@@ -178,7 +175,6 @@ public class TestBuy {
     }
 
     @Test
-        /// допускает русские буквы
     void shouldInvalidOwnerCard() {
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
@@ -201,7 +197,6 @@ public class TestBuy {
     }
 
     @Test
-        // в поле владелец допускает цифры
     void shouldInvalidOwnerCardNumbers() {
         val cardNumber = DataHelper.getFirstCard();
         val month = DataHelper.getValidMonth();
@@ -289,6 +284,5 @@ public class TestBuy {
         servicePage.fillFields(cardNumber, month, year, owner, cvs);
         servicePage.errorOwner();
     }
-
 
 }

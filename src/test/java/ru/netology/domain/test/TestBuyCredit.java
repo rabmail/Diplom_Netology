@@ -7,12 +7,12 @@ import org.junit.jupiter.api.*;
 import ru.netology.domain.data.DBHelper;
 import ru.netology.domain.data.DataHelper;
 import ru.netology.domain.page.ServicePage;
+
 import static com.codeborne.selenide.Configuration.startMaximized;
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestBuyCredit {
-
     ServicePage servicePage = new ServicePage();
 
     @BeforeEach
@@ -73,7 +73,6 @@ public class TestBuyCredit {
             assertEquals(expected, actual);
         }
     }
-
 
     @Test
     void shouldRandomCard() {

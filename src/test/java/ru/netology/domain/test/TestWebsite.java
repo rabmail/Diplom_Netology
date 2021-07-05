@@ -4,14 +4,12 @@ import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.*;
 import ru.netology.domain.page.ServicePage;
-
 import static com.codeborne.selenide.Configuration.startMaximized;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class TestWebsite {
-
     ServicePage servicePage = new ServicePage();
 
     @BeforeEach
@@ -34,7 +32,6 @@ public class TestWebsite {
     void shouldValidPageName() {
         String nameTitle = getWebDriver().getTitle();
         assertEquals(servicePage.getСorrectNameTitle(), nameTitle);
-
     }
 
     @Test
