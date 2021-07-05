@@ -72,6 +72,6 @@ gradlew allureServe
 
 **[План тестирования](https://github.com/rabmail/Diplom_Netology/blob/fcaea2c26b6be865a70da1833ff4acea3d121d4c/report/Plan.md "План тестирования")**
 
-**[Отчет о тестировании](https://github.com/rabmail/Portfolio/blob/b7187f6e455a59a1c86ce2b035e251c647cec4a4/Report/Report.md "Отчет о тестировании")**
+**[Отчет о тестировании](https://github.com/rabmail/Diplom_Netology/blob/80cf34ac7eef9c7c50010faba39656d2692cca69/report/Report.md "Отчет о тестировании")**
 
 **[Итоговый отчёт о проведённой автоматизации](https://github.com/rabmail/Diplom_Netology/blob/54d28798fad4f1b186e72822dbe2d614d5e6c761/report/Summary.md "Итоговый отчёт о проведённой автоматизации")**
