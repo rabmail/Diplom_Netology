@@ -4,6 +4,16 @@
 
 ### Позитивные сценарии:
 
+**Test Scenario** | Purchase-1 | **Test Case ID** | Purchase-1A 
+---|---|---|----
+**Test Case Description** | Purchase - Positive test case | **Test Priority** | High
+**Pre-Requisite** | **[Запуск сервиса](https://github.com/rabmail/Diplom_Netology/blob/2fa7d963038425f877af9b5165d8b874c1d29fa3/README.md "Запуск сервиса")** | **Post-Requisite** | NA
+
+S.No | Action | Inputs | Expected | Actual | Test Browser | Test Result | Test Comments
+---|---|---|---|---|---|---|---
+1 |В браузере ввести адрес сервиса |  http://localhost:8080/ |Стартовая страница сервиса "Путешествие дня" |Стартовая страница сервиса "Путешествие дня"| Google Chrome | Pass | [Dolmatov 07/07/2021 18:12]: Launch successful
+
+
 **- Карта №4444 4444 4444 4441:**
 1. Успешное завершение операции при вводе валидных данных карты (покупка за собственные средства).
 1. Успешное завершение операции при вводе валидных данных карты (покупка за кредитные средства).
