@@ -4,19 +4,6 @@
 
 ### Позитивные сценарии:
 
-**Test Scenario** | Purchase-1 | **Test Case ID** | Purchase-1A 
----|---|---|----
-**Test Case Description** | Purchase - Positive test case | **Test Priority** | High
-**Pre-Requisite** | **[Запуск сервиса](https://github.com/rabmail/Diplom_Netology/blob/2fa7d963038425f877af9b5165d8b874c1d29fa3/README.md "Запуск сервиса")** | **Post-Requisite** | NA
-
-S.No | Action | Inputs | Expected | Actual | Test Browser | Test Result | Test Comments
----|---|---|---|---|---|---|---
-1 |В браузере ввести адрес сервиса |  http://localhost:8080/ |Стартовая страница сервиса "Путешествие дня" |Стартовая страница сервиса "Путешествие дня"| Google Chrome | Pass | [Dolmatov 28/06/2021 10:12]: Launch successful
-2 |Нажать кнопку "Купить", заполнить тестовыми данными, нажать кнопку "Продолжить" |Номер карты - 4444444444444441 <br> Месяц - 01 <br> Год - 22 <br> Владелец - PUPKIN VASA <br> CVC/CVV - 123|Сообщение "Успешно Операция одобрена Банком." |Сообщение "Успешно Операция одобрена Банком."| Google Chrome | Pass | [Dolmatov 28/06/2021 10:13]: Purchase successful
-3 |Нажать кнопку "Купить", заполнить тестовыми данными, нажать кнопку "Продолжить" |Номер карты - 4444444444444442 <br> Месяц - 01 <br> Год - 22 <br> Владелец - PUPKIN VASA <br> CVC/CVV - 123|Сообщение "Ошибка Банк отказал в проведении операции." |Сообщение "Успешно Операция одобрена Банком."| Google Chrome | Fail | [Dolmatov 28/06/2021 10:14]: Card blocked
-
-
-
 
 **- Карта №4444 4444 4444 4441:**
 1. Успешное завершение операции при вводе валидных данных карты (покупка за собственные средства).
